@@ -1,4 +1,10 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
+
 export default function Home() {
+  const router = useRouter();
+
   return (
     <main className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
       {/* 로고 */}
@@ -12,7 +18,10 @@ export default function Home() {
       
       {/* 버튼들 */}
       <div className="w-full max-w-xs space-y-3">
-        <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-4 rounded-xl font-medium transition">
+        <button 
+          onClick={() => router.push('/upload')}
+          className="w-full bg-blue-500 hover:bg-blue-600 text-white py-4 rounded-xl font-medium transition"
+        >
           📷 사진 업로드
         </button>
         <button className="w-full border-2 border-blue-500 text-blue-500 py-4 rounded-xl font-medium opacity-50 cursor-not-allowed">
@@ -22,7 +31,7 @@ export default function Home() {
       
       {/* 푸터 */}
       <p className="text-xs text-gray-400 mt-12">
-        Made by sumiran
+        Made by Sumiran
       </p>
     </main>
   );
